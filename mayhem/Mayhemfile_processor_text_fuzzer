@@ -1,0 +1,9 @@
+project: savantenvs/sentencepiece
+target: processor_text_fuzzer
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/processor_text_fuzzer/testsuite
+cmds:
+  - cmd: /mayhem/processor_text_fuzzer
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/processor_text_fuzzer.dict
