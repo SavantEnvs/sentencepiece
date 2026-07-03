@@ -1,0 +1,31 @@
+# sentencepiece ModelProto wire-format dictionary. The input is fed straight to
+# LoadFromSerializedProto, so protobuf wire tags for the top-level ModelProto fields
+# (pieces=1 msg, trainer_spec=2 msg, normalizer_spec=3 msg, self_test_data=4, denormalizer_spec=5)
+# and the nested SentencePiece fields (piece=1 string, score=2 float, type=3 enum) help the
+# mutator reach the post-load tokenizer code.
+# ModelProto top-level tags
+"\x0a"
+"\x12"
+"\x1a"
+"\x22"
+"\x2a"
+# SentencePiece nested: piece (1,LEN) / score (2,fixed32) / type (3,varint)
+"\x0a"
+"\x15"
+"\x18"
+# special piece strings
+"<unk>"
+"<s>"
+"</s>"
+"\xe2\x96\x81"
+"<0x00>"
+"<0xFF>"
+# normalizer fields: add_dummy_prefix / escape_whitespaces / remove_extra_whitespaces (varint bools)
+"\x10\x01"
+"\x18\x01"
+"\x20\x01"
+# trainer_spec model_type enum (UNIGRAM=1,BPE=2,WORD=3,CHAR=4)
+"\x01"
+"\x02"
+"\x03"
+"\x04"

@@ -1,0 +1,9 @@
+project: savantenvs/sentencepiece
+target: sample_encode_fuzzer
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/sample_encode_fuzzer/testsuite
+cmds:
+  - cmd: /mayhem/sample_encode_fuzzer
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/sample_encode_fuzzer.dict
