@@ -1,0 +1,8 @@
+project: savantenvs/sentencepiece
+target: generate_model
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/generate_model/testsuite
+cmds:
+  - cmd: /mayhem/generate_model
+    libfuzzer: true
